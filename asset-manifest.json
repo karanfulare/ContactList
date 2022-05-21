@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/karanfulare/ContactList/static/css/main.7ef5e92d.css",
-    "main.js": "/karanfulare/ContactList/static/js/main.a51cc2f9.js",
-    "index.html": "/karanfulare/ContactList/index.html",
-    "main.7ef5e92d.css.map": "/karanfulare/ContactList/static/css/main.7ef5e92d.css.map",
-    "main.a51cc2f9.js.map": "/karanfulare/ContactList/static/js/main.a51cc2f9.js.map"
+    "main.css": "/ContactList/static/css/main.7ef5e92d.css",
+    "main.js": "/ContactList/static/js/main.a51cc2f9.js",
+    "index.html": "/ContactList/index.html",
+    "main.7ef5e92d.css.map": "/ContactList/static/css/main.7ef5e92d.css.map",
+    "main.a51cc2f9.js.map": "/ContactList/static/js/main.a51cc2f9.js.map"
   },
   "entrypoints": [
     "static/css/main.7ef5e92d.css",
