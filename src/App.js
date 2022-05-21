@@ -3,23 +3,29 @@ import { Button,Table } from "react-bootstrap";
 
 
 function App() {
+  ///here we are using usestate hook to handle state 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
-
+/// these are for update form
   const [id,setId]=useState();
   const [updatename, setNameupdate] = useState("");
   const [updateemail, setEmailupdate] = useState("");
   const [updatephone, setPhoneupdate] = useState("");
+  /// using this to show/hide update form 
   const[show,setshow]=useState(false);
   const [user,setuser]=useState('');
   const [data, setData] = useState([]);
 
+  // using this hook it will run after every render and state change 
+  //we are calling our function  which get us data here so it updates data every time on state change
   useEffect(() => {
     getuser();
   }, []);
 
+  /////////////// GET REQUEST ///////////////
+  // this function will get the data , used GET request here 
   function getuser() {
     fetch("https://jsonplaceholder.typicode.com/users").then((results) => {
       results.json().then((resp) => {
@@ -34,12 +40,13 @@ function App() {
     });
   }
 
-  /////////// post request //////////
-
+ /////////////// POST REQUEST ///////////////
+ // this function will post/send data to server, used POST request here
+ // we can not see the change on screen because we are not allowed to write to the server
+ // but we do get a response , we can see it in networks tab on clicking the req 
   function saveuser() {
     console.log({ name, email, phone });
     let data = { name, email, phone };
-
     fetch("https://jsonplaceholder.typicode.com/users", {
       method: "POST",
       headers: {
@@ -50,7 +57,9 @@ function App() {
     }).then((results) => console.log(results));
   }
 
-  ///////////delete request ////////////
+/////////////// DELETE REQUEST ///////////////
+// here we send delete req to server again we are not allowed to write to server ,
+// but we get a response 
 
   function deleteuser(id) {
     fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
@@ -63,17 +72,18 @@ function App() {
     });
   }
 
-  ///////////////////////////update user data PUT///////////////////////////////////
+/////////////// PUT REQUEST ///////////////
+// here we are doing two things firstly in the selectuser function we are filling the respective data
+// on which the update call is made into our update form 
   function  selectuser(id) {
     console.log(user[id-1]);
     setNameupdate(user[id-1].name);
         setEmailupdate(user[id-1].email);
         setPhoneupdate(user[id-1].phone);
         setId(user[id-1].id);
-    //
-    
   }
 
+  // here we are doing our put req .
   function updateuser(id){
     console.log(updatename,updatephone,updateemail,id);
     let name = updatename;
@@ -95,7 +105,7 @@ function App() {
     );
   }
 
-  /////////////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////// on screen elements ///////////////////////////////////////////////
   return (
     <div  className="app">
       <div className="data">
