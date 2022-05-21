@@ -7,7 +7,61 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.app{
+  
+  justify-content: center;
+  align-items:center;
+}
+
+.input{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.data{
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
+
+.datatable{
+  height:auto;
+  width:auto;
+  
+}
+
+.adduser{
+  color: #000;
+  border: 1px solid black;
+  margin: 10px 100px;
+  border-radius: 4px;
+}
+.adduser button{
+  margin: 10px;
+}
+input{
+  margin: 5px;
+  border-radius: 4px;
+  width:auto;
+}
+
+.update{
+  border: 1px solid black;
+  justify-content: center;
+  align-items:center;
+  border-radius: 4px;
+}
+.update button{
+  margin: 10px;
+}
+h2{
+  margin-top: 10px;
 }
